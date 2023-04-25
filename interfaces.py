@@ -24,3 +24,25 @@ class AbstractCLI(metaclass=abc.ABCMeta):
     def run(self):
         pass
 
+
+class AbstractMetadataUpdater(metaclass=abc.ABCMeta):
+    @abc.abstractmethod
+    def get_metadata(self, file_path):
+        pass
+
+    @abc.abstractmethod
+    def set_metadata(self, file_path, metadata):
+        pass
+
+class AbstractMediaFile(metaclass=abc.ABCMeta):
+    @abc.abstractproperty
+    def file_path(self):
+        pass
+
+    @abc.abstractproperty
+    def metadata(self):
+        pass
+
+    @abc.abstractproperty
+    def file_extension(self):
+        pass
